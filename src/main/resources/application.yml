@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: postgres
+    password: mysecretpassword
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+    enabled: true
+
+logging.level.org.spring-framework.web: DEBUG
+logging.level.org.hibernate: INFO
+logging.level.com.homegroup.incomecounter: INFO
