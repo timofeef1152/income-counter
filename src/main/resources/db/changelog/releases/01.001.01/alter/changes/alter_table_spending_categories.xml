@@ -10,7 +10,15 @@
                    http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <include file="changes/create_table_people.xml" relativeToChangelogFile="true"/>
-    <include file="changes/create_table_spending_categories.xml" relativeToChangelogFile="true"/>
-    <include file="changes/create_table_transactions.xml" relativeToChangelogFile="true"/>
+    <changeSet author="tas" id="add spending_categories name constraint">
+        <addUniqueConstraint columnNames="name"
+                             constraintName="add spending_categories_name_constraint"
+                             tableName="spending_categories"/>
+    </changeSet>
+
+    <changeSet author="tas" id="create spending_categories idx">
+        <createIndex indexName="spending_categories_idx" tableName="spending_categories" unique="true">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
 </databaseChangeLog>

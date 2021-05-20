@@ -10,42 +10,36 @@
                    http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <changeSet author="tas" id="add transaction_person constraint">
-        <createIndex indexName="transaction_const" tableName="transaction" unique="true">
+    <changeSet author="tas" id="create transactions idx">
+        <createIndex indexName="transactions_idx" tableName="transactions" unique="true">
             <column name="id"/>
             <column name="person_id"/>
         </createIndex>
     </changeSet>
 
-    <changeSet author="tas" id="create transaction idx">
-        <createIndex indexName="transaction_idx" tableName="transaction" unique="true">
-            <column name="id"/>
-        </createIndex>
-    </changeSet>
-
-    <changeSet author="tas" id="add transaction_person fk">
+    <changeSet author="tas" id="add transactions_person fk">
         <addForeignKeyConstraint baseColumnNames="person_id"
-                                 baseTableName="transaction"
-                                 constraintName="transaction_person_fk"
+                                 baseTableName="transactions"
+                                 constraintName="transactions_person_fk"
                                  deferrable="false"
                                  initiallyDeferred="false"
                                  onDelete="NO ACTION"
                                  onUpdate="NO ACTION"
                                  referencedColumnNames="id"
-                                 referencedTableName="person"
+                                 referencedTableName="people"
                                  validate="true"/>
     </changeSet>
 
-    <changeSet author="tas" id="add transaction_spending_category fk">
+    <changeSet author="tas" id="add transactions_spending_category fk">
         <addForeignKeyConstraint baseColumnNames="category_id"
-                                 baseTableName="transaction"
-                                 constraintName="transaction_spending_category_fk"
+                                 baseTableName="transactions"
+                                 constraintName="transactions_spending_category_fk"
                                  deferrable="false"
                                  initiallyDeferred="false"
                                  onDelete="NO ACTION"
                                  onUpdate="NO ACTION"
                                  referencedColumnNames="id"
-                                 referencedTableName="spending_category"
+                                 referencedTableName="spending_categories"
                                  validate="true"/>
     </changeSet>
 </databaseChangeLog>

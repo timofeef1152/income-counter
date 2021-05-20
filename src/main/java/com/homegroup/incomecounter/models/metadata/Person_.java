@@ -1,13 +1,10 @@
 package com.homegroup.incomecounter.models.metadata;
 
 import com.homegroup.incomecounter.models.Person;
-import com.homegroup.incomecounter.models.SpendingCategory;
-import com.homegroup.incomecounter.models.Transaction;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")

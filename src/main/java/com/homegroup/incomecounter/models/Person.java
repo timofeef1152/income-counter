@@ -3,10 +3,11 @@ package com.homegroup.incomecounter.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "people")
 @Getter
 @Setter
 public class Person extends BaseEntity {

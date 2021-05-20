@@ -16,6 +16,11 @@ spring:
     change-log: classpath:db/changelog/changelog-master.xml
     enabled: true
 
-logging.level.org.spring-framework.web: DEBUG
-logging.level.org.hibernate: INFO
-logging.level.com.homegroup.incomecounter: INFO
+
+logging:
+  level:
+    org:
+      spring-framework.web: DEBUG
+      hibernate.SQL: DEBUG
+    com.homegroup.incomecounter: INFO
+

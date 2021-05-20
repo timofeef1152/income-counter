@@ -10,7 +10,6 @@
                    http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-<!--    <include file="changes/alter_table_person.xml" relativeToChangelogFile="true"/>-->
-<!--    <include file="changes/alter_table_spending_category.xml" relativeToChangelogFile="true"/>-->
-    <include file="changes/alter_table_transaction.xml" relativeToChangelogFile="true"/>
+    <include file="changes/alter_table_transactions.xml" relativeToChangelogFile="true"/>
+    <include file="changes/alter_table_spending_categories.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

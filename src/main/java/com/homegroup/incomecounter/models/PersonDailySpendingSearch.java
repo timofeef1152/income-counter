@@ -6,18 +6,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
-public class TransactionSearch {
+public class PersonDailySpendingSearch {
+    @NotNull
+    private UUID person;
     @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    LocalDate startDate;
+    private LocalDate startDate;
     @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    LocalDate endDate;
-    String[] categoryFilter;
-    String commentFilter;
-    Long minAmount;
-    Long maxAmount;
+    private LocalDate endDate;
 }
