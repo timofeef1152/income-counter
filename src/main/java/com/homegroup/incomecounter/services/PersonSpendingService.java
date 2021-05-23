@@ -8,7 +8,7 @@ import com.homegroup.incomecounter.models.PersonSpendingInPeriodSearch;
 import java.util.List;
 
 public interface PersonSpendingService {
-    List<PersonSpendingInPeriod> readPersonSpending(PersonSpendingInPeriodSearch search);
+    List<PersonSpendingInPeriod> readPersonSpendingInPeriod(PersonSpendingInPeriodSearch search);
 
     List<PersonDailySpending> readPersonDailySpending(PersonDailySpendingSearch search);
 }

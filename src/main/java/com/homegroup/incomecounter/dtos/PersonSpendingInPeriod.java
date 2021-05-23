@@ -3,12 +3,14 @@ package com.homegroup.incomecounter.dtos;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 import java.util.UUID;
 
 @Getter
 @Setter
+@ToString
 public class PersonSpendingInPeriod {
     @JsonIgnore
     private final UUID id;

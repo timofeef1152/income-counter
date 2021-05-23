@@ -7,6 +7,7 @@ import com.homegroup.incomecounter.repositories.PersonRepository;
 import com.homegroup.incomecounter.repositories.SpendingCategoryRepository;
 import com.homegroup.incomecounter.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,9 @@ import java.util.UUID;
 
 @Component
 public class Initialization {
+    @Value("${init-enable}")
+    private boolean initEnabled;
+
     @Autowired
     private PersonRepository personRepository;
 
@@ -31,6 +35,9 @@ public class Initialization {
     @PostConstruct
     @Transactional
     public void init1() {
+        if (!initEnabled) {
+            return;
+        }
         List<LocalDate> dates = new ArrayList<>();
         dates.add(LocalDate.of(2021, 1, 12));
         dates.add(LocalDate.of(2021, 5, 20));
