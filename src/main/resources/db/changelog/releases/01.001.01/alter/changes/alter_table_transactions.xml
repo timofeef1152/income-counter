@@ -13,6 +13,7 @@
     <changeSet author="tas" id="create transactions idx">
         <createIndex indexName="transactions_idx" tableName="transactions" unique="true">
             <column name="person_id"/>
+            <column name="id"/>
         </createIndex>
     </changeSet>
 
